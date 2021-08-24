@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <span>login succeeded</span><br />
+    <p>your ID is <span id="userinfo"></span>.</p>
+
+
+    <script>
+        function request() {
+            let requestParams = "";
+
+            this.getParameter = function (param) {
+                var url = unescape(location.href);
+                console.log(url);
+
+                var paramsArr = (url.substring(url.indexOf('?') + 1, url.length)).split('&');
+
+                console.log(paramsArr)
+
+                for (let i = 0; i < paramsArr.length; i++) {
+                    var temp = paramsArr[i].split('=');
+                    console.log('for문 안의 temp', temp);
+
+                    if (temp[0].toUpperCase() == param.toUpperCase()) {
+                        this.requestParams = temp[1];
+                        console.log('if문안에서 this.requestParams ', this.requestParams);
+                        console.log('성공', temp[0], temp[1])
+                    }
+                }
+            }
+        }
+
+
+        let gestRequest = new request();
+        gestRequest.getParameter('id');
+        let info2 = gestRequest.requestParams;
+        console.log(info2);
+
+        if (info2 != null) {
+            let target = document.getElementById('userinfo');
+            console.log(target)
+            target.innerHTML = info2;
+        }
+    </script>
+</body>
+
+</html>
