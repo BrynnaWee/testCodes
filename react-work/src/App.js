@@ -32,6 +32,8 @@ function App() {
    
     //styled-component Button
     <AppBlock>
+      <StyledButton>Button</StyledButton>
+      <StyledButton>버튼</StyledButton>
       <StyledButton>버튼</StyledButton>
     </AppBlock>
   

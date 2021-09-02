@@ -37,16 +37,18 @@
 
 // texts.map((t,i) => {
 //     result += t;
-//     (values[i]) ? (result += `<b>${values[i]}</b>`) : (result += '')    
+//     (values[i]) ? (result += `<b>${values[i]}</b>`) : (result += '') 
+//     // console.log(result)   
 // })
 
 // return result
-
-
-
 // }
+
 // let a = favoriteColors`제가 좋아하는 색은 ${red}과 ${blue}입니다.`
 // console.log(a)
+
+
+
 
 function sample(texts,...fns){
 
@@ -55,11 +57,11 @@ function sample(texts,...fns){
         body: '내용은 블라블라 입니다.'
     };
 
-    return texts.reduce((result, t, i)=> `${result}${text}${fns[i] ? fns[i] : ''}`,'');
+    return texts.reduce((result, text, i) => `${result}${text}${fns[i] ? fns[i](mockProps) : ''}`,'');
 }
 
-sample`
+const p = sample`
 제목 : ${props => props.title}
 내용 : ${props => props.body}
 `
-
+console.log(p)

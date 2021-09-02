@@ -31,6 +31,7 @@ const ButtonStyle = styled.button`
     /*기타*/
     &+&{
         margin-left: 1rem;
+        margin-top: 1rem;
     }
 `;
 
@@ -41,11 +42,11 @@ class StyledButton extends Component {
         const {children, ...rest} = this.props;
 
         return (
-            <div>
+         
                 <ButtonStyle {...rest}>
                     {children}
                 </ButtonStyle>
-            </div>
+        
         );
     }
 }
