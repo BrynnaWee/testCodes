@@ -32,5 +32,5 @@ export const ThemeSystem = {
 
 
 
-/*justify-content: center;*/
-/*align-items: stretch;*/ /*텍스트 수직정렬*/
+/*justify-content: center;*/ /*텍스트 수평정렬-가로 */
+/*align-items: stretch;*/ /*텍스트 수직정렬-세로*/

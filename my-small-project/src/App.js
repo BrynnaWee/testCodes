@@ -9,6 +9,7 @@ import User from './Component/User/User';
 import Circle from './Component/StyledExample/Circle';
 import Buttons from './Component/StyledExample/Buttons';
 import { ThemeSystem } from './ThemePalette';
+import AlertPopup from './Component/StyledExample/AlertPopup';
 
 const AppBlock = styled.div`
   width: 512px;
@@ -19,12 +20,34 @@ const AppBlock = styled.div`
 `;
 
 const ButtonGroup = styled.div`
-  &+&{
+  &:not(:first-child){
     margin-top: 1rem;
   }
 `;
 
 class App extends Component {
+
+state = {
+  setAlertPopup : false
+}
+
+onClickOpen = () => {
+  console.log('열기')
+  this.setState({...this.state, 
+    setAlertPopup: !this.state.setAlertPopup})
+}
+onConfirm = () => {
+  console.log('확인')
+  this.setState({...this.state, 
+    setAlertPopup: !this.state.setAlertPopup})
+}
+onCancel = () => {
+  console.log('취소')
+  this.setState({...this.state, 
+    setAlertPopup: !this.state.setAlertPopup})
+}
+
+
 
   render() {
     
@@ -81,7 +104,22 @@ class App extends Component {
     <Buttons color='gray' fullWidth>Button</Buttons>
     <Buttons color='pink' fullWidth>Button</Buttons>
     </ButtonGroup>
+
+    <ButtonGroup>
+    <Buttons color='pink' size='large' onClick={this.onClickOpen}>삭제하기</Buttons>
+    </ButtonGroup>
     </AppBlock>
+
+    <AlertPopup 
+      title='삭제하기'
+      confirmText='삭제'
+      cancelText='취소'
+      onConfirm={this.onConfirm}
+      onCancel={this.onCancel}
+      visible={this.state.setAlertPopup}
+    >
+      데이터를 삭제하시겠습니까?
+    </AlertPopup>
 
     </ThemeProvider>
     
