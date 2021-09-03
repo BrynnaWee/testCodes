@@ -107,17 +107,42 @@
 // // sj.name='mg'; //error발생
 
 
-interface LengthWise{
-    length: number;
-}
+// interface LengthWise{
+//     length: number;
+//     // value: string;
+// }
 
-function logText<T extends LengthWise>(text: T): T{
-    console.log(text.length);
-    return text;
-}
+// function logText<T extends LengthWise>(text: T): T{
+//     console.log(text.length);
+//     return text;
+// }
 
-let test = logText({length: 10, value: 'hi'});
+// let test = logText({length: 10, value: 'hi'});
 
-console.log(test);
+// console.log(test);
 
+
+
+//타입연습
+
+let count = 0;
+count += 1;
+// count = "아하하하하";
+
+const message:string = 'hello world';
+
+const done:boolean = true;
+
+const number:number[] = [1,2,3];
+
+const messages :string[] = ['hello', 'world'];
+
+// messages.push(1);
+
+let mightBeUndefined: string | undefined = undefined;
+let nullableNumber: number | null = null;
+
+let color: 'red' | 'orange' | 'yellow' = 'red';
+color = 'yellow';
+// color = 'green';
 
