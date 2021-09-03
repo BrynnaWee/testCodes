@@ -10,6 +10,7 @@ import Circle from './Component/StyledExample/Circle';
 import Buttons from './Component/StyledExample/Buttons';
 import { ThemeSystem } from './ThemePalette';
 import AlertPopup from './Component/StyledExample/AlertPopup';
+import AnimationTest from './Component/AnimationTest'
 
 const AppBlock = styled.div`
   width: 512px;
@@ -65,13 +66,14 @@ onCancel = () => {
   // //input 상태관리
     // <InputSample />
 
-  //배열변경 - app.js등 외부에 데이터객체있는 경우  
+  // 배열변경 - app.js등 외부에 데이터객체있는 경우  
     //  <User />
   
   //styled-components
   
-    // <Circle />
-<div>
+//     // <Circle />
+// //     //ThemeProvider는 div로 감싸주어야 한다.
+<div>  
     <ThemeProvider
      theme={ThemeSystem}
      >
@@ -124,6 +126,10 @@ onCancel = () => {
     </ThemeProvider>
     
 </div>
+
+
+
+
     );
   }
 }
